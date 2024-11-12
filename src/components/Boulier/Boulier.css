@@ -1,0 +1,257 @@
+.boulier-section {
+    height: auto;
+    margin: 30px;
+    width: calc(100% - 60px);
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    left: 5%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background-color: #294C60;
+    color: #FFC49B;
+    padding: 20px;
+}
+
+.boulier-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.boulier-container h1 {
+    font-size: 34px;
+    margin: 10px;
+}
+
+.boulier-container p {
+    font-size: 20px;
+    margin: 10px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.boulier-wrapper {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 10px;
+}
+
+/* Your existing Boulier styles */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.column-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.column-control button {
+    background: #FFC49B;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #294C60;
+}
+
+.column-control button:hover:not(:disabled) {
+    background: #ffb27b;
+    transform: translateY(-2px);
+}
+
+.column-control button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.column-control span {
+    color: #fff;
+    font-size: 16px;
+}
+
+.total-display {
+    color: #FFC49B;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Abacus Frame */
+.abacus-frame {
+    background: #1a3340;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.abacus-border {
+    background: #8B4513;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    min-height: 300px;
+}
+
+/* Columns */
+.abacus-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    position: relative;
+}
+
+/* Divider Bar */
+.divider-bar {
+    width: 100%;
+    height: 8px;
+    background: #654321;
+    position: relative;
+    z-index: 2;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Beads */
+.bead {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #FFC49B;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.bead:hover {
+    background-color: #ffb27b;
+}
+
+/* Vertical Rod */
+.abacus-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #654321;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* Upper and Lower Sections */
+.upper-section, .lower-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.upper-section {
+    height: 100px;
+    justify-content: flex-start;
+}
+
+.lower-section {
+    height: 220px;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .abacus-border {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .abacus-column {
+        width: 50px;
+    }
+}
+
+/* Add these new styles to your existing CSS */
+
+.bead.active {
+    transform: translateY(-20px);
+}
+
+.upper-section .bead.active {
+    transform: translateY(20px);
+}
+
+.column-value {
+    position: absolute;
+    left: 50%;
+    top: -35px;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #FFC49B;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+.instructions {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.instructions h3 {
+    color: #FFC49B;
+    margin-bottom: 15px;
+}
+
+.instructions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.instructions li {
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.instructions li:before {
+    content: "•";
+    color: #FFC49B;
+    position: absolute;
+    left: 0;
+}
+
+/* Add smooth transitions for bead movement */
+.upper-section .bead,
+.lower-section .bead {
+    position: relative;
+    transition: transform 0.3s ease;
+}

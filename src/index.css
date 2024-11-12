@@ -1,0 +1,21 @@
+:root {
+  --primary-color: #294C60;
+  --secondary-color: #FFC49B;
+  --background-color: #001B2E;
+  --text-color: #FFFFFF;
+  --accent-color: #04002c;
+  --navbar-color: #333333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

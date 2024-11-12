@@ -1,0 +1,90 @@
+.card {
+  position: relative;
+  height: 500px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-bottom: 200px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 80px;
+  border-radius: 10px;
+  transform: skewx(15deg);
+  transition: 0.4s;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 90px;
+  border-radius: 10px;
+  transform: skewx(15deg);
+  transition: 0.4s;
+  filter: blur(30px);
+}
+
+.card:hover::before,
+.card:hover::after {
+  transform: skewx(0);
+  left: 50px;
+  width: calc(100% - 100px);
+}
+
+.card:nth-child(1)::before,
+.card:nth-child(1)::after {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.card:nth-child(2)::before,
+.card:nth-child(2)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.card:nth-child(3)::before,
+.card:nth-child(3)::after {
+  background: linear-gradient(315deg, #3cc900, #00acd3);
+}
+
+.card:nth-child(4)::before,
+.card:nth-child(4)::after {
+  background: linear-gradient(315deg, #0370ff, #ff0000);
+}
+
+.card:nth-child(5)::before,
+.card:nth-child(5)::after {
+  background: linear-gradient(315deg, #0370ff, #ff0000);
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+  left: 0;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 20px 50px;
+  transition: 0.4s;
+  color: white;
+}
+
+.card:hover .content {
+  padding: 40px 50px;
+}
+
+/* Rest of the styles from card.css */

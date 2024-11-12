@@ -1,0 +1,151 @@
+.skills-section {
+  padding: 80px 20px;
+  background-color: #294C60;
+  min-height: 100vh;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.technical-skills, .creative-skills, .personal-development {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.technical-skills h2, .creative-skills h2, .personal-development h2 {
+  color: #FFC49B;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.skill-category h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.skill-icons img:hover {
+  transform: scale(1.2);
+}
+
+.creative-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.tool-card {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+}
+
+.tool-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.tool-card span {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.activity-card {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+}
+
+.activity-icon {
+  font-size: 2rem;
+  color: #FFC49B;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.activity-card h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.activity-card p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 40px 15px;
+  }
+
+  .technical-skills h2, .creative-skills h2, .personal-development h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-grid, .activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-category {
+    padding: 15px;
+  }
+
+  .skill-icons img {
+    width: 35px;
+    height: 35px;
+  }
+}
