@@ -14,7 +14,7 @@ const ProjectCard = ({ title, subtitle, description, link, className }) => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            {link.includes('github') ? 'GitHub repository' : 'Download CV'}
+            {link.includes('github') ? 'GitHub repository' : 'Download Resume'}
           </a>
         )}
       </div>

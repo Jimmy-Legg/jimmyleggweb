@@ -28,8 +28,8 @@ const Projects = () => {
       className: "d"
     },
     {
-      title: "CV",
-      description: "Here you can find my CV",
+      title: "Resume",
+      description: "Here you can find my Resume",
       link: "pdf/Jimmy Legg.pdf",
       className: "e"
     }

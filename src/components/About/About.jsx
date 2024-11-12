@@ -22,7 +22,7 @@ const About = () => {
             </div>
           </div>
           <p className="bio" data-aos="fade-right">
-            A passionate second-year Computer Science student at the University of Limoges, 
+            A passionate third-year Computer Science student at the University of Limoges, 
             combining technical expertise with business acumen through studies in Management, 
             Economics, and Mathematics. Dedicated to creating innovative solutions and 
             continuously expanding my programming knowledge across multiple languages and platforms.

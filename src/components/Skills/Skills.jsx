@@ -12,10 +12,14 @@ const Skills = () => {
             <div className="skill-category">
               <h3>Languages</h3>
               <div className="skill-icons">
-                <img src="/images/Python.svg" alt="Python" title="Python" />
-                <img src="/images/Java.svg" alt="Java" title="Java" />
-                <img src="/images/C.png" alt="C" title="C" />
-                <img src="/images/C++.png" alt="C++" title="C++" />
+                <img src="https://img.icons8.com/?size=48&id=13441&format=png" alt="Python" title="Python" />
+                <img src="https://img.icons8.com/?size=48&id=13679&format=png" alt="Java" title="Java" />
+                <img src="https://img.icons8.com/?size=48&id=shQTXiDQiQVR&format=png" alt="C" title="C" />
+                <img src="https://img.icons8.com/?size=48&id=40669&format=png" alt="C++" title="C++" />
+                <img src="https://img.icons8.com/?size=48&id=55251&format=png" alt="C#" title="C#" />
+                <img src="https://img.icons8.com/?size=64&id=t7vIvDXazOGO&format=png" alt="Rust" title="Rust" />
+                <img src="https://img.icons8.com/?size=48&id=ZoxjA0jZDdFZ&format=png" alt="Kotlin" title="Kotlin" />
+                <img src="https://img.icons8.com/?size=48&id=1BC75jFEBED6&format=png" alt=".NET MAUI" title=".NET MAUI" />
               </div>
             </div>
             
@@ -25,6 +29,9 @@ const Skills = () => {
                 <img src="https://img.icons8.com/?size=48&id=20909&format=png" alt="HTML" title="HTML5" />
                 <img src="https://img.icons8.com/?size=50&id=1045&format=png" alt="CSS" title="CSS3" />
                 <img src="https://img.icons8.com/?size=50&id=3752&format=png" alt="JavaScript" title="JavaScript" />
+                <img src="https://img.icons8.com/?size=40&id=bzf0DqjXFHIW&format=png" alt="React" title="React" />
+                <img src="https://img.icons8.com/?size=48&id=54087&format=png" alt="NodeJS" title="NodeJS" />
+                <img src="https://img.icons8.com/?size=50&id=3753&format=png" alt="PHP" title="PHP" />
               </div>
             </div>
 
@@ -45,7 +52,6 @@ const Skills = () => {
               <img src="https://img.icons8.com/?size=80&id=kQgv4iWrBzpN&format=png" alt="Blender" />
               <span>3D Modeling</span>
             </div>
-            {/* Add other creative tools */}
           </div>
         </div>
 
@@ -54,18 +60,18 @@ const Skills = () => {
           <div className="activities-grid">
             <div className="activity-card">
               <i className="activity-icon music"></i>
-              <h4>Musical Arts</h4>
-              <p>Piano & Drums</p>
+              <h4>Music & Literature</h4>
+              <p>Piano, Drums and Reading</p>
             </div>
             <div className="activity-card">
               <i className="activity-icon sports"></i>
               <h4>Physical Training</h4>
-              <p>Swimming & Weight Training</p>
+              <p>Swimming, Weight Training, Cycling</p>
             </div>
             <div className="activity-card">
               <i className="activity-icon mind"></i>
               <h4>Strategic Thinking</h4>
-              <p>Bridge & Programming</p>
+              <p>Programming and Chess</p>
             </div>
           </div>
         </div>
