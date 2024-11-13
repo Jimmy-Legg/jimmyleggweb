@@ -67,6 +67,16 @@
 
 .card:nth-child(5)::before,
 .card:nth-child(5)::after {
+  background: linear-gradient(315deg, #ff03c0, #008cff);
+}
+
+.card:nth-child(6)::before,
+.card:nth-child(6)::after {
+  background: linear-gradient(315deg, #fbff03, #0400ff);
+}
+
+.card:nth-child(7)::before,
+.card:nth-child(7)::after {
   background: linear-gradient(315deg, #0370ff, #ff0000);
 }
 
