@@ -1,0 +1,31 @@
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.about-content h3 {
+  margin-top: 2rem;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+.about-content ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.about-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.about-content p {
+  margin: 1rem 0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.about-content strong {
+  color: var(--secondary-color);
+}
