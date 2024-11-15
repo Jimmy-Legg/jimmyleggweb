@@ -121,4 +121,7 @@
       width: 40px;
       height: 40px;
     }
+    .hero-canvas {
+      display: none;
+    }
   }

@@ -6,6 +6,10 @@ const Hero = () => {
   const mouseRef = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
+    // Check if device is mobile
+    const isMobile = window.innerWidth <= 768
+    if (isMobile) return // Don't initialize canvas on mobile
+
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
     let w = canvas.width = window.innerWidth
