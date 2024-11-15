@@ -109,12 +109,16 @@
   @media screen and (max-width: 768px) {
     .textCenter {
       font-size: 2.5rem;
-      padding: 0 20px;
+      padding: 0;
+      width: 100%;
+      left: 0;
     }
     
     .textCenterUnder {
       font-size: 1.2rem;
-      padding: 0 20px;
+      padding: 0;
+      width: 100%;
+      left: 0;
     }
     
     .arrow img {
