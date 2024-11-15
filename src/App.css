@@ -32,3 +32,14 @@ main {
   from, to { border-color: transparent }
   50% { border-color: #ffffff }
 }
+
+@media screen and (max-width: 768px) {
+  .typing-animation {
+    white-space: normal;
+    border-right: none;
+    animation: none;
+    word-wrap: break-word;
+    display: inline-block;
+    width: 100% !important;
+  }
+}
