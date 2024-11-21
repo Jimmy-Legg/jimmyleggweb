@@ -5,13 +5,23 @@ import App from './App'
 import './index.css'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const rootElement = document.getElementById('root');
 
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-      <SpeedInsights />
-    </BrowserRouter>
-  </React.StrictMode>
-)
+if (!rootElement) {
+  throw new Error('Failed to find the root element');
+}
+
+const root = ReactDOM.createRoot(rootElement);
+
+try {
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+        <SpeedInsights />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+} catch (error) {
+  console.error('Error rendering the app:', error);
+}
