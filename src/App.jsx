@@ -1,13 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
-import Home from './pages/Home';
-import BoulierPage from './pages/BoulierPage';
-import DreamsDonutsPage from './pages/DreamsDonutsPage';
-import JavaProjectPage from './pages/JavaProjectPage';
-import PythonGamePage from './pages/PythonGamePage';
+import { useEffect, Suspense } from 'react';
+import React from 'react';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const BoulierPage = React.lazy(() => import('./pages/BoulierPage'));
+const DreamsDonutsPage = React.lazy(() => import('./pages/DreamsDonutsPage'));
+const JavaProjectPage = React.lazy(() => import('./pages/JavaProjectPage'));
+const PythonGamePage = React.lazy(() => import('./pages/PythonGamePage'));
 
 const Sitemap = () => {
   useEffect(() => {
@@ -97,14 +101,18 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/boulier" element={<BoulierPage />} />
-      <Route path="/dreams-donuts" element={<DreamsDonutsPage />} />
-      <Route path="/java-project" element={<JavaProjectPage />} />
-      <Route path="/python-game" element={<PythonGamePage />} />
-      <Route path="/sitemap.xml" element={<Sitemap />} />
-    </Routes>
+    <ErrorBoundary>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/boulier" element={<BoulierPage />} />
+          <Route path="/dreams-donuts" element={<DreamsDonutsPage />} />
+          <Route path="/java-project" element={<JavaProjectPage />} />
+          <Route path="/python-game" element={<PythonGamePage />} />
+          <Route path="/sitemap.xml" element={<Sitemap />} />
+        </Routes>
+      </Suspense>
+    </ErrorBoundary>
   );
 }
 
