@@ -32,6 +32,19 @@ const PythonGamePage = () => {
                 View Full Report (PDF)
               </a>
             </div>
+            <div className="credits-section">
+              <h3>Project Credits</h3>
+              <div className="credits-container">
+                <div className="credit-item">
+                  <span className="credit-name">Nathan Pinheiro</span>
+                  <span className="credit-role">Developer</span>
+                </div>
+                <div className="credit-item">
+                  <span className="credit-name">Jimmy Legg</span>
+                  <span className="credit-role">Developer</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="project-media">
             <FullscreenImage 

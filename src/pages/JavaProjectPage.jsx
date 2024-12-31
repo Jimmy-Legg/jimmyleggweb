@@ -20,18 +20,27 @@ const JavaProjectPage = () => {
           <div className="project-description">
             <h2>Project Overview</h2>
             <p>
-              This project was developed as part of the SAE 2.01-2.02 module, focusing on creating
-              a robust Java application that demonstrates various programming concepts and best practices.
-              This project was a groupe peoject of 2, with </p> <a href="https://github.com/Leteno18" target="_blank" rel="noopener noreferrer">Nathan Pinheiro</a> and <a href="https://github.com/Jimmy-Legg" target="_blank" rel="noopener noreferrer">Jimmy-Legg</a>
-            <p>
+              The Orchard Game is a Java-based strategy game developed as part of the SAE-S2.01-02 module.
+              Players manage an orchard, planting and harvesting trees while dealing with various challenges
+              and weather conditions.
             </p>
             <div className="project-links">
-              <a href="https://github.com/Jimmy-Legg/Orchard" target="_blank" rel="noopener noreferrer" className="github-link">
+              <a href="https://github.com/Leteno/JeuVerger" target="_blank" rel="noopener noreferrer" className="github-link">
                 View on GitHub
               </a>
-              <a href="/pdf/Rapport SAE 2.01-2.02.pdf" target="_blank" rel="noopener noreferrer" className="pdf-link">
-                View Full Report (PDF)
-              </a>
+            </div>
+            <div className="credits-section">
+              <h3>Project Credits</h3>
+              <div className="credits-container">
+                <div className="credit-item">
+                  <span className="credit-name">Nathan Pinheiro</span>
+                  <span className="credit-role">Developer</span>
+                </div>
+                <div className="credit-item">
+                  <span className="credit-name">Jimmy Legg</span>
+                  <span className="credit-role">Developer</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="project-media">
