@@ -1,10 +1,14 @@
 .skills-section {
     padding: 50px 20px;
     background-color: #294C60;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .skills-container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -14,6 +18,7 @@
     text-align: center;
     margin-bottom: 40px;
     color: #ffffff;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
 .skills-grid {
@@ -24,11 +29,16 @@
 
 .skill-category {
     text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
 }
 
 .skill-category h3 {
     margin-bottom: 20px;
     color: #ffffff;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
 }
 
 .skill-icons {
@@ -36,6 +46,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding: 10px;
 }
 
 .skill-icon-wrapper {
@@ -47,24 +58,84 @@
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease;
-    width: 100px;
+    width: clamp(80px, 20vw, 100px);
 }
 
 .skill-icon-wrapper:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .skill-icon-wrapper img {
-    width: 48px;
-    height: 48px;
+    width: clamp(30px, 8vw, 48px);
+    height: clamp(30px, 8vw, 48px);
     object-fit: contain;
 }
 
 .skill-icon-wrapper span {
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
     color: #ffffff;
-    font-size: 0.8em;
     text-align: center;
+    word-break: break-word;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    transition: background 0.3s ease;
+}
+
+.carousel-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
 }
 
 .creative-content {
@@ -101,76 +172,6 @@
 .tool-card span {
     color: #ffffff;
     text-align: center;
-}
-
-.carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.carousel-content {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 10px;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 2;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-button:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background: white;
 }
 
 .activities-grid {
@@ -216,19 +217,36 @@
 }
 
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .skills-section {
+        padding: 30px 15px;
     }
 
-    .creative-content {
-        flex-direction: column;
+    .skill-category {
+        padding: 15px;
     }
 
-    .carousel-container {
-        width: 90%;
+    .skill-icons {
+        gap: 10px;
+        padding: 5px;
     }
 
-    .activities-grid {
-        grid-template-columns: 1fr;
+    .carousel-item {
+        height: 300px;
+    }
+
+    .carousel-button {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-icon-wrapper {
+        padding: 10px;
+    }
+
+    .carousel-item {
+        height: 200px;
     }
 }

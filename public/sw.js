@@ -5,7 +5,8 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/favicon.ico'
+  '/favicon.ico',
+  '/pdf/Jimmy Legg.pdf'
 ];
 
 const externalResources = [
@@ -57,6 +58,17 @@ self.addEventListener('fetch', (event) => {
   
   // Skip non-GET requests
   if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Special handling for PDF files
+  if (url.pathname.endsWith('.pdf')) {
+    event.respondWith(
+      fetch(event.request)
+        .catch(() => {
+          return caches.match(event.request);
+        })
+    );
     return;
   }
 
