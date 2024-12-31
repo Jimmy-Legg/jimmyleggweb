@@ -1,355 +1,234 @@
 .skills-section {
-  padding: 4rem 2rem;
-  background: #294C60;
+    padding: 50px 20px;
+    background-color: #294C60;
 }
 
 .skills-container {
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.technical-skills h2 {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
+.technical-skills h2,
+.creative-skills h2,
+.personal-development h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
+    display: grid;
+    gap: 40px;
+    margin-bottom: 60px;
 }
 
 .skill-category {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .skill-category h3 {
-  color: #64ffda;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  position: relative;
-}
-
-.skill-category h3::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: #64ffda;
-  border-radius: 2px;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .skill-icons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .skill-icon-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-  position: relative;
-  width: 100%;
-  max-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    width: 100px;
 }
 
 .skill-icon-wrapper:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-5px);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .skill-icon-wrapper img {
-  width: 48px;
-  height: 48px;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-}
-
-.skill-icon-wrapper:hover img {
-  transform: scale(1.1);
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 
 .skill-icon-wrapper span {
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-}
-
-.skill-level {
-  width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-}
-
-.skill-level-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: linear-gradient(90deg, #64ffda, #00b4d8);
-  border-radius: 2px;
-  transition: width 0.6s ease-out;
-}
-
-.creative-skills {
-  margin-top: 4rem;
-}
-
-.creative-skills h2 {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
+    color: #ffffff;
+    font-size: 0.8em;
+    text-align: center;
 }
 
 .creative-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 }
 
 .tool-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 400px;
 }
 
 .tool-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .tool-card img {
-  width: 64px;
-  height: 64px;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-  transition: transform 0.3s ease;
-}
-
-.tool-card:hover img {
-  transform: scale(1.1);
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
 }
 
 .tool-card span {
-  color: #64ffda;
-  font-size: 1.5rem;
-  font-weight: 500;
+    color: #ffffff;
+    text-align: center;
 }
 
 .carousel-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 2rem auto;
-  position: relative;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  padding: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .carousel-content {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  background: #000;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
 }
 
 .carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 2;
-  transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .carousel-button:hover {
-  background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .carousel-button.prev {
-  left: 0;
-  border-radius: 0 5px 5px 0;
+    left: 10px;
 }
 
 .carousel-button.next {
-  right: 0;
-  border-radius: 5px 0 0 5px;
+    right: 10px;
 }
 
 .carousel-dots {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .dot.active {
-  background: white;
-}
-
-.personal-development {
-  margin-top: 4rem;
-}
-
-.personal-development h2 {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 2rem;
+    background: white;
 }
 
 .activities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .activity-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
 .activity-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .activity-card h4 {
-  color: #fff;
-  margin: 1rem 0;
-  font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .activity-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .activity-card li {
-  margin: 0.75rem 0;
-  padding-left: 1.5rem;
-  position: relative;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.4;
 }
 
-.activity-card li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #64ffda;
+.highlight {
+    color: #61dafb;
+    font-weight: 600;
 }
 
-.activity-card .highlight {
-  color: #64ffda;
-  font-weight: 600;
-  margin-right: 0.5rem;
-}
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 
-.activity-icon {
-  font-size: 2rem;
-  color: #64ffda;
-  margin-bottom: 1rem;
-  display: block;
-}
+    .creative-content {
+        flex-direction: column;
+    }
 
-.activity-icon.sports:before {
-  content: "🏃‍♂️";
-}
+    .carousel-container {
+        width: 90%;
+    }
 
-.activity-icon.creative:before {
-  content: "🎨";
-}
-
-.activity-icon.mind:before {
-  content: "🎯";
-}
-
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .skill-category {
-    padding: 2.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .skill-category {
-    padding: 3rem;
-  }
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
 }

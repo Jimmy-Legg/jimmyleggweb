@@ -5,13 +5,19 @@ import App from './App'
 import './index.css'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+// Configure React Router future flags
+const router = {
+  future: {
+    v7_startTransition: true,
+    v7_relativeSplatPath: true
+  }
+};
 
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter {...router}>
       <App />
       <SpeedInsights />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 )
