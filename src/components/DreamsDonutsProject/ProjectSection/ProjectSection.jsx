@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProjectSection.css';
+import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 
 const ProjectSection = () => {
+  const [loadedImages, setLoadedImages] = useState({});
+
+  const handleImageLoad = (title) => {
+    setLoadedImages(prev => ({ ...prev, [title]: true }));
+  };
+
   const projects = [
     {
       title: "Home",
@@ -49,26 +56,36 @@ const ProjectSection = () => {
       title: "Sounds",
       description: "On the LAB page there are ding sounds and voice announcing new donuts sent, the voice and ding sound can be muted.",
       image: "https://i.ibb.co/QHJX8YY/sounds.png",
-      maxWidth: 100
+      maxWidth: 300
     }
   ];
 
   return (
-    <section id="features" className="section">
-      <h2>Features</h2>
-      {projects.map((project, index) => (
-        <div key={index} className="project">
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <div className="image-container">
-            <img 
-              src={project.image} 
-              alt={project.title}
-              style={{ maxWidth: project.maxWidth || '800px' }}
-            />
+    <section id="features">
+      <div className="container">
+        {projects.map((project, index) => (
+          <div key={index} className="project" data-aos="fade-up" data-aos-delay={index * 100}>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <div className="image-container">
+              {!loadedImages[project.title] && (
+                <div className="loading-container">
+                  <LoadingSpinner />
+                </div>
+              )}
+              <img
+                src={project.image}
+                alt={project.title}
+                style={{ 
+                  maxWidth: project.maxWidth,
+                  display: loadedImages[project.title] ? 'block' : 'none'
+                }}
+                onLoad={() => handleImageLoad(project.title)}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };

@@ -49,19 +49,34 @@
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
-  width: 100%;
+  position: relative;
+  min-height: 200px;
+}
+
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 @media (max-width: 768px) {
   .project {
     padding: 1.5rem;
   }
-  
+
   .project h3 {
     font-size: 1.3rem;
   }
-  
-  .project img {
-    max-width: 100% !important;
+
+  .project p {
+    font-size: 1rem;
   }
 }
