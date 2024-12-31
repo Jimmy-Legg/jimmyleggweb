@@ -25,7 +25,7 @@ const JavaProjectPage = () => {
               and weather conditions.
             </p>
             <div className="project-links">
-              <a href="https://github.com/Leteno/JeuVerger" target="_blank" rel="noopener noreferrer" className="github-link">
+              <a href="https://github.com/Jimmy-legg/Orchard" target="_blank" rel="noopener noreferrer" className="github-link">
                 View on GitHub
               </a>
             </div>
@@ -39,6 +39,25 @@ const JavaProjectPage = () => {
                 <div className="credit-item">
                   <span className="credit-name">Jimmy Legg</span>
                   <span className="credit-role">Developer</span>
+                </div>
+              </div>
+            </div>
+            <div className="languages-section">
+              <h3>Languages & Technologies Used</h3>
+              <div className="languages-container">
+                <div className="language-item">
+                  <span className="language-name">Java</span>
+                  <div className="language-bar">
+                    <div className="language-fill" style={{ width: '75%', backgroundColor: '#b07219' }}></div>
+                  </div>
+                  <span className="language-percentage">75%</span>
+                </div>
+                <div className="language-item">
+                  <span className="language-name">JavaFX</span>
+                  <div className="language-bar">
+                    <div className="language-fill" style={{ width: '25%', backgroundColor: '#747175' }}></div>
+                  </div>
+                  <span className="language-percentage">25%</span>
                 </div>
               </div>
             </div>

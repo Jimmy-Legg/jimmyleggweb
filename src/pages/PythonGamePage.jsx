@@ -45,6 +45,18 @@ const PythonGamePage = () => {
                 </div>
               </div>
             </div>
+            <div className="languages-section">
+              <h3>Languages Used</h3>
+              <div className="languages-container">
+                <div className="language-item">
+                  <span className="language-name">Python</span>
+                  <div className="language-bar">
+                    <div className="language-fill" style={{ width: '100%', backgroundColor: '#3572A5' }}></div>
+                  </div>
+                  <span className="language-percentage">100%</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="project-media">
             <FullscreenImage 

@@ -6,7 +6,17 @@
 }
 
 .project-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(41, 76, 96, 0.85);
   padding: 20px 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .back-button {
@@ -25,8 +35,9 @@
 }
 
 .project-header {
+  padding-top: 80px;
   text-align: center;
-  padding: 40px 0;
+  padding-bottom: 40px;
 }
 
 .project-header h1 {
@@ -237,6 +248,67 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+.languages-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.languages-section h3 {
+  color: #64ffda;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  margin-bottom: 20px;
+}
+
+.languages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.language-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 50px;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.language-item:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.language-name {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  font-weight: 600;
+  color: white;
+}
+
+.language-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.language-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.language-percentage {
+  font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: right;
+}
+
 @media (max-width: 768px) {
   .project-content {
     padding: 10px;
@@ -271,6 +343,16 @@
     margin-top: 20px;
     padding: 15px;
   }
+
+  .languages-section {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .language-item {
+    padding: 8px;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -294,5 +376,9 @@
 
   .credits-container {
     grid-template-columns: 1fr;
+  }
+
+  .language-item {
+    grid-template-columns: 70px 1fr 40px;
   }
 }
