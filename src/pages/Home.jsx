@@ -4,7 +4,7 @@ import Hero from '../components/MainPage/Hero/Hero';
 import About from '../components/MainPage/About/About';
 import Skills from '../components/MainPage/Skills/Skills';
 import Projects from '../components/MainPage/Projects/Projects';
-import Footer from '../components/MainPage/Footer/Footer';
+import ContactSection from '../components/MainPage/ContactSection/ContactSection';
 
 const Home = () => {
 
@@ -15,7 +15,7 @@ const Home = () => {
       <About />
       <Skills />
       <Projects />
-      <Footer />
+      <ContactSection />
     </main>
   );
 };

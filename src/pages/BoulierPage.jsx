@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Boulier from '../components/Boulier/Boulier';
+import ContactSection from '../components/MainPage/ContactSection/ContactSection';
 import './BoulierPage.css';
 
 const BoulierPage = () => {
@@ -20,6 +21,7 @@ const BoulierPage = () => {
         </p>
         <Boulier />
       </div>
+      <ContactSection />
     </div>
   );
 };

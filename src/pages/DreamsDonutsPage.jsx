@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import DonutBackground from '../components/DreamsDonutsProject/DonutBackground/DonutBackground';
 import ProjectSection from '../components/DreamsDonutsProject/ProjectSection/ProjectSection';
 import AboutSection from '../components/DreamsDonutsProject/AboutSection/AboutSection';
-import ContactSection from '../components/DreamsDonutsProject/ContactSection/ContactSection';
+import ContactSection from '../components/MainPage/ContactSection/ContactSection';
 import DonutModel from '../components/DreamsDonutsProject/3DDonut/DonutModel';
 import './DreamsDonutsPage.css';
 
@@ -45,18 +45,20 @@ const DreamsDonutsPage = () => {
                         ← Back to Portfolio
                     </button>
                 </nav>
-                <section id="intro" className="section">
-                    <div className="content">
-                        <h1>Dreams Donuts Command</h1>
-                        <p>Streamlining Donut Production and Management</p>
-                    </div>
-                    <div className="model-wrapper">
-                        <DonutModel />
-                    </div>
-                </section>
+                <div className="project-content">
+                    <section id="intro" className="section">
+                        <div className="content">
+                            <h1>Dreams Donuts Command</h1>
+                            <p>Streamlining Donut Production and Management</p>
+                        </div>
+                        <div className="model-wrapper">
+                            <DonutModel />
+                        </div>
+                    </section>
 
-                <AboutSection />
-                <ProjectSection />
+                    <AboutSection />
+                    <ProjectSection />
+                </div>
                 <ContactSection />
             </div>
         </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FullscreenImage from '../components/FullscreenImage/FullscreenImage';
+import ContactSection from '../components/MainPage/ContactSection/ContactSection';
 import './PythonGamePage.css';
 
 const PythonGamePage = () => {
@@ -136,6 +137,7 @@ const PythonGamePage = () => {
           </div>
         </section>
       </main>
+      <ContactSection /> 
     </div>
   );
 };
