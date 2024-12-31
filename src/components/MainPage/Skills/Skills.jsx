@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './Skills.css';
 
 const Skills = () => {
@@ -50,12 +50,11 @@ const Skills = () => {
             <div className="skill-category" data-aos="fade-up" data-aos-delay="400">
               <h3>Web Development</h3>
               <div className="skill-icons">
-                <SkillIcon name="HTML5" src="https://img.icons8.com/?size=48&id=20909&format=png" />
-                <SkillIcon name="CSS3" src="https://img.icons8.com/?size=50&id=1045&format=png" />
-                <SkillIcon name="JavaScript" src="https://img.icons8.com/?size=50&id=3752&format=png" />
-                <SkillIcon name="React" src="https://img.icons8.com/?size=40&id=bzf0DqjXFHIW&format=png" />
-                <SkillIcon name="Node.js" src="https://img.icons8.com/?size=48&id=54087&format=png" />
-                <SkillIcon name="PHP" src="https://img.icons8.com/?size=50&id=3753&format=png" />
+                <SkillIcon name="HTML" src="https://img.icons8.com/?size=48&id=20909&format=png" />
+                <SkillIcon name="CSS" src="https://img.icons8.com/?size=50&id=1045&format=png" />
+                <SkillIcon name="JavaScript" src="https://img.icons8.com/?size=50&id=108784&format=png" />
+                <SkillIcon name="React" src="https://img.icons8.com/?size=48&id=123603&format=png" />
+                <SkillIcon name="Node.js" src="https://img.icons8.com/?size=50&id=54087&format=png" />
               </div>
             </div>
 
@@ -82,23 +81,17 @@ const Skills = () => {
             
             <div className="carousel-container" data-aos="fade-up" data-aos-delay="400">
               <button className="carousel-button prev" onClick={prevSlide}>&lt;</button>
-              <div className="carousel-content">
-                <img 
-                  src={carouselImages[currentSlide].src} 
-                  alt={carouselImages[currentSlide].alt}
-                  className="carousel-image"
-                />
-              </div>
-              <button className="carousel-button next" onClick={nextSlide}>&gt;</button>
-              <div className="carousel-dots">
-                {carouselImages.map((_, index) => (
-                  <span 
+              <div className="carousel-content" style={{ transform: `translateX(-${currentSlide * 100}%)`, transition: 'transform 0.5s ease-in-out' }}>
+                {carouselImages.map((image, index) => (
+                  <div 
                     key={index} 
-                    className={`dot ${currentSlide === index ? 'active' : ''}`}
-                    onClick={() => setCurrentSlide(index)}
-                  />
+                    className="carousel-item"
+                  >
+                    <img src={image.src} alt={image.alt} />
+                  </div>
                 ))}
               </div>
+              <button className="carousel-button next" onClick={nextSlide}>&gt;</button>
             </div>
           </div>
         </div>
