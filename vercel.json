@@ -1,10 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -31,9 +25,28 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdnjs.cloudflare.com https://*.vercel.app *.vercel.com vitals.vercel-insights.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://img.icons8.com https://i.ibb.co; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://api.emailjs.com https://unpkg.com https://cdnjs.cloudflare.com https://img.icons8.com https://*.vercel.app *.vercel.com vitals.vercel-insights.com; object-src 'self'; media-src 'self'; frame-src 'self' https://*.vercel.app *.vercel.com"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdnjs.cloudflare.com https://*.vercel.app *.vercel.com vitals.vercel-insights.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://img.icons8.com https://i.ibb.co; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://api.emailjs.com https://unpkg.com https://cdnjs.cloudflare.com https://img.icons8.com https://*.vercel.app *.vercel.com vitals.vercel-insights.com; object-src 'self'; media-src 'self'; frame-src 'self' https://*.vercel.app *.vercel.com; worker-src 'self' blob:; manifest-src 'self'"
         }
       ]
+    },
+    {
+      "source": "/_vercel/speed-insights/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/_vercel/speed-insights/(.*)",
+      "destination": "https://vitals.vercel-insights.com/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }

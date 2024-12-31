@@ -16,15 +16,22 @@ const externalResources = [
 
 // Skip caching for certain paths and schemes
 const shouldNotCache = (url) => {
+  // Add more specific Vercel paths
   const skippedPaths = [
     '/_vercel/speed-insights',
     '/_vercel/insights',
-    'chrome-extension://'
+    'chrome-extension://',
+    'vitals.vercel-insights.com'
   ];
   const skippedSchemes = ['chrome-extension:'];
   
-  return skippedPaths.some(path => url.includes(path)) || 
-         skippedSchemes.some(scheme => url.toString().startsWith(scheme));
+  // Check if URL is a Vercel analytics URL
+  const isVercelAnalytics = url.hostname === 'vitals.vercel-insights.com' || 
+                           url.pathname.startsWith('/_vercel/');
+  
+  return skippedPaths.some(path => url.toString().includes(path)) || 
+         skippedSchemes.some(scheme => url.toString().startsWith(scheme)) ||
+         isVercelAnalytics;
 };
 
 self.addEventListener('install', (event) => {
@@ -74,7 +81,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip caching for certain paths and schemes
+  // Allow Vercel analytics requests to pass through without caching
   if (shouldNotCache(url)) {
     event.respondWith(fetch(event.request));
     return;
