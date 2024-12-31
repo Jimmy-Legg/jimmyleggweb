@@ -14,13 +14,17 @@ const externalResources = [
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
 ];
 
-// Skip caching for certain paths
+// Skip caching for certain paths and schemes
 const shouldNotCache = (url) => {
   const skippedPaths = [
     '/_vercel/speed-insights',
-    '/_vercel/insights'
+    '/_vercel/insights',
+    'chrome-extension://'
   ];
-  return skippedPaths.some(path => url.includes(path));
+  const skippedSchemes = ['chrome-extension:'];
+  
+  return skippedPaths.some(path => url.includes(path)) || 
+         skippedSchemes.some(scheme => url.toString().startsWith(scheme));
 };
 
 self.addEventListener('install', (event) => {
@@ -70,8 +74,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip caching for certain paths
-  if (shouldNotCache(url.pathname)) {
+  // Skip caching for certain paths and schemes
+  if (shouldNotCache(url)) {
     event.respondWith(fetch(event.request));
     return;
   }
@@ -80,7 +84,21 @@ self.addEventListener('fetch', (event) => {
   if (url.pathname.endsWith('.pdf')) {
     event.respondWith(
       fetch(event.request)
-        .catch(() => {
+        .then(response => {
+          // Clone the response before caching
+          const responseToCache = response.clone();
+          const cacheName = url.hostname.includes('jimmylegg.vercel.app') || url.hostname.includes('localhost') ? CACHE_NAME : EXTERNAL_CACHE_NAME;
+          caches.open(cacheName)
+            .then(cache => {
+              if (response.ok) {
+                cache.put(event.request, responseToCache);
+              }
+            })
+            .catch(error => console.error('Error caching PDF:', error));
+          return response;
+        })
+        .catch(error => {
+          console.error('Error fetching PDF:', error);
           return caches.match(event.request);
         })
     );
@@ -98,32 +116,26 @@ self.addEventListener('fetch', (event) => {
           return response;
         }
 
-        return fetch(event.request).then(response => {
-          // Don't cache non-successful responses or opaque responses
-          if (!response || response.status !== 200) {
-            return response;
-          }
+        return fetch(event.request)
+          .then(response => {
+            if (!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
 
-          // Clone the response
-          const responseToCache = response.clone();
-
-          // Cache in the appropriate cache storage
-          caches.open(isExternal ? EXTERNAL_CACHE_NAME : CACHE_NAME)
-            .then(cache => {
-              // Only cache GET requests
-              if (event.request.method === 'GET') {
+            const responseToCache = response.clone();
+            const cacheName = isExternal ? EXTERNAL_CACHE_NAME : CACHE_NAME;
+            caches.open(cacheName)
+              .then(cache => {
                 cache.put(event.request, responseToCache);
-              }
-            });
+              })
+              .catch(error => console.error('Error caching resource:', error));
 
-          return response;
-        }).catch(() => {
-          // If fetch fails (offline), try to return a cached response
-          if (isExternal) {
-            return caches.match(event.request, { cacheName: EXTERNAL_CACHE_NAME });
-          }
-          return caches.match(event.request, { cacheName: CACHE_NAME });
-        });
+            return response;
+          })
+          .catch(error => {
+            console.error('Fetch error:', error);
+            return new Response('Network error', { status: 408, statusText: 'Network error' });
+          });
       })
   );
 });
