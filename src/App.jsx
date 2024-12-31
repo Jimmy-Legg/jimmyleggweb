@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import BoulierPage from './pages/BoulierPage';
 import DreamsDonutsPage from './pages/DreamsDonutsPage';
 import JavaProjectPage from './pages/JavaProjectPage';
+import PythonGamePage from './pages/PythonGamePage';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -32,6 +33,11 @@ const Sitemap = () => {
 
   <url>
     <loc>https://jimmy-legg.live/java-project</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jimmy-legg.live/python-game</loc>
     <priority>0.8</priority>
   </url>
 
@@ -96,6 +102,7 @@ function App() {
       <Route path="/boulier" element={<BoulierPage />} />
       <Route path="/dreams-donuts" element={<DreamsDonutsPage />} />
       <Route path="/java-project" element={<JavaProjectPage />} />
+      <Route path="/python-game" element={<PythonGamePage />} />
       <Route path="/sitemap.xml" element={<Sitemap />} />
     </Routes>
   );

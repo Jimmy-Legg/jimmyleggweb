@@ -22,9 +22,9 @@ const Projects = () => {
       title: "Python MiniGame",
       subtitle: "school project",
       description: "In this project I created Python console mini games for university. This project had a menu you could choose to play against a friend or a bot or 2 bots against each other. You had the option between 4 games: 4x4, tic tac toe, match game, number guessing game. If a game isn't familiar, a rules section is there if needed.",
-      link: "https://github.com/Leteno18/SAE-S1.02",
+      link: "/python-game",
       className: "b",
-      buttonText: "View on GitHub"
+      buttonText: "Learn More"
     },
     {
       title: "Java Project",
