@@ -56,16 +56,290 @@
     width: 250px;
 }
 
-@media screen and (max-width: 768px) {
-    .card {
-        margin: 30px;
-        width: 90%;
+.card h2 {
+    font-size: 1.9em;
+    margin-bottom: 10px;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 80px;
+    border-radius: 10px;
+    transform: skewx(15deg);
+    transition: 0.4s;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 90px;
+    border-radius: 10px;
+    transform: skewx(15deg);
+    transition: 0.4s;
+    filter: blur(30px);
+}
+
+.card:hover::before,
+.card:hover::after {
+    transform: skewx(0);
+    left: 50px;
+    width: calc(100% - 100px);
+}
+
+.card:nth-child(1)::before,
+.card:nth-child(1)::after {
+    background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.card:nth-child(2)::before,
+.card:nth-child(2)::after {
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.card:nth-child(3)::before,
+.card:nth-child(3)::after {
+    background: linear-gradient(315deg, #3cc900, #00acd3);
+}
+
+.card:nth-child(4)::before,
+.card:nth-child(4)::after {
+    background: linear-gradient(315deg, #0370ff, #ff0000);
+}
+
+.card:nth-child(5)::before,
+.card:nth-child(5)::after {
+    background: linear-gradient(315deg, #0370ff, #ff0000);
+}
+
+.card span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.card span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card.a:hover span::before {
+    top: -70px;
+}
+
+.card.b:hover span::before {
+    top: -70px;
+}
+
+.card.c:hover span::before {
+    height: 100px;
+    top: -80px;
+}
+
+.card.d:hover span::before {
+    top: -80px;
+    left: 120px;
+}
+
+.card.e:hover span::before {
+    background-image: url("../images/Jimmy Legg.png");
+    width: 250px;
+    height: 300px;
+    top: -220px;
+    left: 120px;
+}
+
+.card.a:hover span::after {
+    background-image: url("../images/Snake.gif");
+    width: 200px;
+    height: 200px;
+    left: 250px;
+    bottom: -110px;
+}
+
+.card.b:hover span::after {
+    background-image: url("../images/JeuxPy.gif");
+    width: 200px;
+    height: 200px;
+    left: 250px;
+    bottom: -100px;
+}
+
+.card.c:hover span::after {
+    background-image: url("../images/Orchard.gif");
+    width: 300px;
+    height: 180px;
+    left: 10px;
+    bottom: -160px;
+}
+
+.card.d:hover span::after {
+    width: 100px;
+    height: 100px;
+    left: 10px;
+    bottom: -80px;
+}
+
+.card.e:hover span::after {
+    width: 100px;
+    height: 100px;
+    left: 10px;
+    bottom: -60px;
+}
+.card.f:hover span::after {
+  width: 100px;
+  height: 100px;
+  bottom: -30px;
+}
+
+.card.g:hover span::after {
+  width: 100px;
+  height: 100px;
+  bottom: -30px;
+}
+
+.card:hover span::before {
+    content: "";
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    left: 50px;
+    top: -50px;
+    animation: swing 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card span::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.4s;
+    background-size: cover;
+    background-position: center;
+}
+
+.card:hover span::after {
+    background-size: cover;
+    width: 500px;
+    height: 300px;
+    opacity: 1;
+    animation: swing 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation-delay: -1s;
+}
+
+.content {
+    z-index: 1;
+    position: relative;
+    left: 0;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px 50px;
+    transition: 0.4s;
+    color: white;
+}
+
+.card:hover .content {
+    padding: 40px 50px;
+}
+
+@keyframes swing {
+    0% {
+        transform: translatey(10px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(10px);
     }
 }
-.container {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+
+@media screen and (max-width: 400px) {
+    .content {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .card {
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+
+    .card.a {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .card.b {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .card.c {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .card.d {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .card.a:hover span::before {
+        top: -180px;
+    }
+
+    .card.b:hover span::before {
+        top: -180px;
+    }
+
+    .card.c:hover span::before {
+        top: -180px;
+    }
+
+    .card.d:hover span::before {
+        top: -220px;
+        left: 140px;
+    }
+}
+
+.disabled-link {
+    display: inline-block;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    cursor: not-allowed;
 }

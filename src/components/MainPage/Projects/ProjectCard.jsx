@@ -3,6 +3,7 @@ import './ProjectCard.css'
 const ProjectCard = ({ title, subtitle, description, link, className, buttonText = "Learn More" }) => {
   return (
     <div className={`card ${className}`}>
+      <span></span>
       <div className="content">
         <h2>{title}</h2>
         {subtitle && <h3>{subtitle}</h3>}
