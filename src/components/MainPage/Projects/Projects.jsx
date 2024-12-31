@@ -30,9 +30,9 @@ const Projects = () => {
       title: "Java Project",
       subtitle: "school project",
       description: "In this project, we had to create the java replica of the board game named Orchard for university. This game was created in groupe of 2. In this game you have to roll a dice to collect 40 fruits, you lose if you roll 9 time the crow and place all 9 pieces of a the puzzle. This game includes saving player data, music, a rules section and option section. For this project, we had to do versions of the game on git.",
-      link: "https://github.com/Jimmy-Legg/Orchard",
+      link: "/java-project",
       className: "c",
-      buttonText: "View on GitHub"
+      buttonText: "Learn More"
     },
     {
       title: "Legrand Project",
@@ -47,7 +47,7 @@ const Projects = () => {
       description: "Explore the Dreams Donuts Command project, a web-based application designed to streamline donut production and management in a multi-level donut establishment.",
       link: "/dreams-donuts",
       className: "f",
-      buttonText: "View Project"
+      buttonText: "Learn More"
     },
     {
       title: "Current Project: La Poste RAG",
