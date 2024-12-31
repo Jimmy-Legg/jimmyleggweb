@@ -45,12 +45,14 @@
 }
 
 .image-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
-  position: relative;
   min-height: 200px;
+  margin: 2rem 0;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .loading-container {
@@ -59,6 +61,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  background: transparent;
 }
 
 .container {

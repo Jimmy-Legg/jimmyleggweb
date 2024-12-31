@@ -2,16 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #294C60;
+  background: transparent;
 }
 
 .loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 3px solid rgba(100, 255, 218, 0.2);
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  border-top-color: #64ffda;
+  border-top-color: #FFC49B;
   animation: spin 1s ease-in-out infinite;
 }
 
