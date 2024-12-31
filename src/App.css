@@ -46,3 +46,75 @@ main {
     width: 100% !important;
   }
 }
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #64ffda;
+  color: #294C60;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Focus styles for keyboard navigation */
+.user-is-tabbing *:focus {
+  outline: 2px solid #64ffda !important;
+  outline-offset: 2px !important;
+}
+
+/* Hide focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+/* Error page styles */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: #294C60;
+  color: white;
+}
+
+.error-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.error-page p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.back-home {
+  color: #64ffda;
+  text-decoration: none;
+  border: 1px solid #64ffda;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.back-home:hover,
+.back-home:focus {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .skip-to-content,
+  .back-home {
+    border: 2px solid ButtonText;
+  }
+}

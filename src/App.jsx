@@ -7,11 +7,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
 
+// Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
 const BoulierPage = React.lazy(() => import('./pages/BoulierPage'));
 const DreamsDonutsPage = React.lazy(() => import('./pages/DreamsDonutsPage'));
 const JavaProjectPage = React.lazy(() => import('./pages/JavaProjectPage'));
 const PythonGamePage = React.lazy(() => import('./pages/PythonGamePage'));
+const Error404 = React.lazy(() => import('./pages/Error404'));
 
 const Sitemap = () => {
   useEffect(() => {
@@ -80,38 +82,59 @@ const Sitemap = () => {
   return null;
 };
 
+const SkipToContent = () => (
+  <a href="#main-content" className="skip-to-content">
+    Skip to main content
+  </a>
+);
+
 function App() {
   useEffect(() => {
+    // Initialize AOS
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
+      disable: 'mobile'
     });
 
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then((registration) => {
-            console.log('Service Worker registered successfully:', registration.scope);
-          })
-          .catch((error) => {
-            console.log('Service Worker registration failed:', error);
-          });
-      });
-    }
+    // Add keyboard navigation handler
+    const handleKeyDown = (e) => {
+      // Add Tab key indicator
+      if (e.key === 'Tab') {
+        document.body.classList.add('user-is-tabbing');
+      }
+    };
+
+    // Remove tab key indicator when mouse is used
+    const handleMouseDown = () => {
+      document.body.classList.remove('user-is-tabbing');
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('mousedown', handleMouseDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('mousedown', handleMouseDown);
+    };
   }, []);
 
   return (
     <ErrorBoundary>
-      <Suspense fallback={<LoadingSpinner />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/boulier" element={<BoulierPage />} />
-          <Route path="/dreams-donuts" element={<DreamsDonutsPage />} />
-          <Route path="/java-project" element={<JavaProjectPage />} />
-          <Route path="/python-game" element={<PythonGamePage />} />
-          <Route path="/sitemap.xml" element={<Sitemap />} />
-        </Routes>
-      </Suspense>
+      <SkipToContent />
+      <div id="main-content" role="main" tabIndex="-1">
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/boulier" element={<BoulierPage />} />
+            <Route path="/dreams-donuts" element={<DreamsDonutsPage />} />
+            <Route path="/java-project" element={<JavaProjectPage />} />
+            <Route path="/python-game" element={<PythonGamePage />} />
+            <Route path="/sitemap.xml" element={<Sitemap />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </Suspense>
+      </div>
     </ErrorBoundary>
   );
 }
