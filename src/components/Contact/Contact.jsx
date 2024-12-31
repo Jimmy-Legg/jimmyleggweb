@@ -1,10 +1,15 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState('');
+
+  useEffect(() => {
+    // Initialize EmailJS with public key
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
