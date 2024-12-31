@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FullscreenImage from '../components/FullscreenImage/FullscreenImage';
 import './PythonGamePage.css';
 
 const PythonGamePage = () => {
@@ -16,19 +17,27 @@ const PythonGamePage = () => {
 
       <main className="project-content">
         <section className="project-overview">
-          <h2>Project Overview</h2>
-          <p>
-            This Python-based project features a collection of interactive console games developed as part of
-            the SAE-S1.01 module. The project showcases various programming concepts and game development
-            techniques using Python's console interface.
-          </p>
-          <div className="project-links">
-            <a href="https://github.com/Leteno18/SAE-S1.02" target="_blank" rel="noopener noreferrer" className="github-link">
-              View on GitHub
-            </a>
-            <a href="/pdf/SAE-S101-Nathan-Jimmy-G1B.pdf" target="_blank" rel="noopener noreferrer" className="pdf-link">
-              View Full Report (PDF)
-            </a>
+          <div className="project-description">
+            <h2>Project Overview</h2>
+            <p>
+              This Python-based project features a collection of interactive console games developed as part of
+              the SAE-S1.01 module. The project showcases various programming concepts and game development
+              techniques using Python's console interface.
+            </p>
+            <div className="project-links">
+              <a href="https://github.com/Leteno18/SAE-S1.02" target="_blank" rel="noopener noreferrer" className="github-link">
+                View on GitHub
+              </a>
+              <a href="/pdf/SAE-S101-Nathan-Jimmy-G1B.pdf" target="_blank" rel="noopener noreferrer" className="pdf-link">
+                View Full Report (PDF)
+              </a>
+            </div>
+          </div>
+          <div className="project-media">
+            <FullscreenImage 
+              src="/images/JeuxPy.gif"
+              alt="Python Mini Games Demo"
+            />
           </div>
         </section>
 

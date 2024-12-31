@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FullscreenImage from '../components/FullscreenImage/FullscreenImage';
 import './JavaProjectPage.css';
 
 const JavaProjectPage = () => {
@@ -16,18 +17,28 @@ const JavaProjectPage = () => {
 
       <main className="project-content">
         <section className="project-overview">
-          <h2>Project Overview</h2>
-          <p>
-            This project was developed as part of the SAE 2.01-2.02 module, focusing on creating
-            a robust Java application that demonstrates various programming concepts and best practices.
-          </p>
-          <div className="project-links">
-            <a href="https://github.com/Leteno18/SAE-S1.02" target="_blank" rel="noopener noreferrer" className="github-link">
-              View on GitHub
-            </a>
-            <a href="/pdf/Rapport SAE 2.01-2.02.pdf" target="_blank" rel="noopener noreferrer" className="pdf-link">
-              View Full Report (PDF)
-            </a>
+          <div className="project-description">
+            <h2>Project Overview</h2>
+            <p>
+              This project was developed as part of the SAE 2.01-2.02 module, focusing on creating
+              a robust Java application that demonstrates various programming concepts and best practices.
+              This project was a groupe peoject of 2, with </p> <a href="https://github.com/Leteno18" target="_blank" rel="noopener noreferrer">Nathan Pinheiro</a> and <a href="https://github.com/Jimmy-Legg" target="_blank" rel="noopener noreferrer">Jimmy-Legg</a>
+            <p>
+            </p>
+            <div className="project-links">
+              <a href="https://github.com/Jimmy-Legg/Orchard" target="_blank" rel="noopener noreferrer" className="github-link">
+                View on GitHub
+              </a>
+              <a href="/pdf/Rapport SAE 2.01-2.02.pdf" target="_blank" rel="noopener noreferrer" className="pdf-link">
+                View Full Report (PDF)
+              </a>
+            </div>
+          </div>
+          <div className="project-media">
+            <FullscreenImage 
+              src="/images/Orchard.gif"
+              alt="Orchard Game Demo"
+            />
           </div>
         </section>
 

@@ -42,6 +42,30 @@
 
 .project-overview {
   margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.project-media {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .project-links {
@@ -157,8 +181,17 @@
     font-size: 2rem;
   }
 
+  .project-overview {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .project-links {
     flex-direction: column;
+  }
+
+  .modes-grid {
+    grid-template-columns: 1fr;
   }
 
   .pdf-preview {
@@ -167,9 +200,5 @@
 
   .pdf-preview embed {
     height: 400px;
-  }
-
-  .modes-grid {
-    grid-template-columns: 1fr;
   }
 }
