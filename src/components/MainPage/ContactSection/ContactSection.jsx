@@ -18,7 +18,7 @@ const ContactSection = () => {
           </div>
           <div className="contact-item">
             <i className="fab fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/jimmy-legg/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/jimmy-legg-521623271/" target="_blank" rel="noopener noreferrer">
               LinkedIn Profile
             </a>
           </div>
