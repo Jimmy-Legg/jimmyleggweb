@@ -14,6 +14,15 @@ const externalResources = [
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
 ];
 
+// Skip caching for certain paths
+const shouldNotCache = (url) => {
+  const skippedPaths = [
+    '/_vercel/speed-insights',
+    '/_vercel/insights'
+  ];
+  return skippedPaths.some(path => url.includes(path));
+};
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     Promise.all([
@@ -58,6 +67,12 @@ self.addEventListener('fetch', (event) => {
   
   // Skip non-GET requests
   if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Skip caching for certain paths
+  if (shouldNotCache(url.pathname)) {
+    event.respondWith(fetch(event.request));
     return;
   }
 

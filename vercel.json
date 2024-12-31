@@ -15,7 +15,7 @@
         },
         {
           "key": "X-Frame-Options",
-          "value": "DENY"
+          "value": "SAMEORIGIN"
         },
         {
           "key": "X-XSS-Protection",
@@ -31,7 +31,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://img.icons8.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://api.emailjs.com https://unpkg.com https://cdnjs.cloudflare.com https://img.icons8.com; object-src 'self'; media-src 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdnjs.cloudflare.com https://*.vercel.app *.vercel.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; img-src 'self' data: https: https://img.icons8.com; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self' https://api.emailjs.com https://unpkg.com https://cdnjs.cloudflare.com https://img.icons8.com https://*.vercel.app *.vercel.com vitals.vercel-insights.com; object-src 'self'; media-src 'self'; frame-src 'self'"
         }
       ]
     }
