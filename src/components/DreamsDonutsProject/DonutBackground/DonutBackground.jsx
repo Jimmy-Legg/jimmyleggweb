@@ -17,12 +17,8 @@ const DonutBackground = () => {
   const spinningTorusRef = useRef(null);
   const spinStartTimeRef = useRef(0);
 
-  const gridSize = { x: 10, y: 20 };
+  const gridSize = { x: 5, y: 5 };
   const sphereSpacing = 1.2;
-  const cursorRadius = 1;
-  const explosionStrength = 0.2;
-  const explosionRadius = 1.5;
-  const transitionSpeed = 0.1;
   const normalSpinSpeed = 0.1;
   const fastSpinSpeed = 0.5;
   const fastSpinDuration = 1000;
@@ -108,7 +104,7 @@ const DonutBackground = () => {
         0.1,
         1000
       );
-      newCamera.position.set(0, 0, 1.5);
+      newCamera.position.set(-0.6, 0, 1.5);
 
       const newRenderer = new THREE.WebGLRenderer({
         antialias: true,

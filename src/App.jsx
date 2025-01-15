@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, Suspense } from 'react';
-import React from 'react';
+import React, { lazy } from 'react';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import AOS from 'aos';
@@ -11,10 +11,10 @@ import './App.css';
 const Home = React.lazy(() => import('./pages/Home'));
 const BoulierPage = React.lazy(() => import('./pages/BoulierPage'));
 const DreamsDonutsPage = React.lazy(() => import('./pages/DreamsDonutsPage'));
-const JavaProjectPage = React.lazy(() => import('./pages/JavaProjectPage'));
-const PythonGamePage = React.lazy(() => import('./pages/PythonGamePage'));
+const JavaProjectPage = lazy(() => import('./pages/JavaProjectPage'));
+const PythonGamePage = lazy(() => import('./pages/PythonGamePage'));
 const Error404 = React.lazy(() => import('./pages/Error404'));
-const LaPosteProjectPage = React.lazy(() => import('./pages/LaPosteProjectPage'));
+const LaPosteProjectPage = lazy(() => import('./pages/LaPosteProjectPage'));
 
 const Sitemap = () => {
   useEffect(() => {
@@ -133,10 +133,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/boulier" element={<BoulierPage />} />
-            <Route path="/dreams-donuts" element={<DreamsDonutsPage />} />
-            <Route path="/java-project" element={<JavaProjectPage />} />
-            <Route path="/python-game" element={<PythonGamePage />} />
-            <Route path="/la-poste-rag" element={<LaPosteProjectPage />} />
+            <Route path="/projects/dreams-donuts" element={<DreamsDonutsPage />} />
+            <Route path="/projects/java-project" element={<JavaProjectPage />} />
+            <Route path="/projects/python-game" element={<PythonGamePage />} />
+            <Route path="/projects/la-poste-rag" element={<LaPosteProjectPage />} />
             <Route path="/sitemap.xml" element={<Sitemap />} />
             <Route path="*" element={<Error404 />} />
           </Routes>

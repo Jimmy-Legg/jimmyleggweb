@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import DonutBackground from '../components/DreamsDonutsProject/DonutBackground/DonutBackground';
-import ProjectSection from '../components/DreamsDonutsProject/ProjectSection/ProjectSection';
-import AboutSection from '../components/DreamsDonutsProject/AboutSection/AboutSection';
-import ContactSection from '../components/MainPage/ContactSection/ContactSection';
-import DonutModel from '../components/DreamsDonutsProject/3DDonut/DonutModel';
 import './DreamsDonutsPage.css';
+
+// Lazy load heavy components
+const DonutBackground = lazy(() => import('../components/DreamsDonutsProject/DonutBackground/DonutBackground'));
+const ProjectSection = lazy(() => import('../components/DreamsDonutsProject/ProjectSection/ProjectSection'));
+const AboutSection = lazy(() => import('../components/DreamsDonutsProject/AboutSection/AboutSection'));
+const ContactSection = lazy(() => import('../components/MainPage/ContactSection/ContactSection'));
+const DonutModel = lazy(() => import('../components/DreamsDonutsProject/3DDonut/DonutModel'));
+
+// Loading fallback
+const LoadingFallback = () => <div className="loading-fallback">Loading...</div>;
 
 const DreamsDonutsPage = () => {
     const navigate = useNavigate();
@@ -38,7 +43,9 @@ const DreamsDonutsPage = () => {
 
     return (
         <>
-            <DonutBackground />
+            <Suspense fallback={<div className="background-placeholder" />}>
+                <DonutBackground />
+            </Suspense>
             <div id="content">
                 <nav className="project-nav">
                     <button onClick={handleBack} className="back-button">
@@ -52,14 +59,22 @@ const DreamsDonutsPage = () => {
                             <p>Streamlining Donut Production and Management</p>
                         </div>
                         <div className="model-wrapper">
-                            <DonutModel />
+                            <Suspense fallback={<LoadingFallback />}>
+                                <DonutModel />
+                            </Suspense>
                         </div>
                     </section>
 
-                    <AboutSection />
-                    <ProjectSection />
+                    <Suspense fallback={<LoadingFallback />}>
+                        <AboutSection />
+                    </Suspense>
+                    <Suspense fallback={<LoadingFallback />}>
+                        <ProjectSection />
+                    </Suspense>
                 </div>
-                <ContactSection />
+                <Suspense fallback={<LoadingFallback />}>
+                    <ContactSection />
+                </Suspense>
             </div>
         </>
     );
