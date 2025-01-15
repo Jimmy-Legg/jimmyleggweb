@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FullscreenImage from '../components/FullscreenImage/FullscreenImage';
 import ContactSection from '../components/MainPage/ContactSection/ContactSection';
-import './PythonGamePage.css';
+import '../styles/ProjectPage.css';
 
 const PythonGamePage = () => {
   return (
-    <div className="python-game-container">
+    <div className="project-container">
       <nav className="project-nav">
         <Link to="/" className="back-button">← Back to Home</Link>
       </nav>

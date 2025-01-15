@@ -44,6 +44,7 @@ const Skills = () => {
                 <SkillIcon name="Rust" src="https://img.icons8.com/?size=64&id=t7vIvDXazOGO&format=png" />
                 <SkillIcon name="Kotlin" src="https://img.icons8.com/?size=48&id=ZoxjA0jZDdFZ&format=png" />
                 <SkillIcon name=".NET MAUI" src="https://img.icons8.com/?size=48&id=1BC75jFEBED6&format=png" />
+                <SkillIcon name="Networking" src="https://img.icons8.com/?size=48&id=71524&format=png" />
               </div>
             </div>
             
@@ -52,6 +53,8 @@ const Skills = () => {
               <div className="skill-icons">
                 <SkillIcon name="HTML" src="https://img.icons8.com/?size=48&id=20909&format=png" />
                 <SkillIcon name="CSS" src="https://img.icons8.com/?size=50&id=1045&format=png" />
+                <SkillIcon name="PHP" src="https://img.icons8.com/?size=50&id=3753&format=png" />
+                <SkillIcon name="Tailwind CSS" src="https://img.icons8.com/?size=48&id=CIAZz2CYc6Kc&format=png" />
                 <SkillIcon name="JavaScript" src="https://img.icons8.com/?size=50&id=108784&format=png" />
                 <SkillIcon name="React" src="https://img.icons8.com/?size=48&id=123603&format=png" />
                 <SkillIcon name="Node.js" src="https://img.icons8.com/?size=50&id=54087&format=png" />
@@ -59,10 +62,26 @@ const Skills = () => {
             </div>
 
             <div className="skill-category" data-aos="fade-up" data-aos-delay="600">
-              <h3>Database & Tools</h3>
+              <h3>Database</h3>
               <div className="skill-icons">
-                <SkillIcon name="SQL" src="/images/SQL.png" />
-                <SkillIcon name="Git" src="https://img.icons8.com/?size=50&id=12598&format=png" />
+                <SkillIcon name="MySQL" src="https://img.icons8.com/?size=48&id=UFXRpPFebwa2&format=png" />
+                <SkillIcon name="PostgreSQL" src="https://img.icons8.com/?size=80&id=LwQEs9KnDgIo&format=png" />
+                <SkillIcon name="MongoDB" src="https://img.icons8.com/?size=80&id=cREyrHivHRHF&format=png" />
+              </div>
+            </div>
+            <div className="skill-category" data-aos="fade-up" data-aos-delay="800">
+              <h3>Tools</h3>
+              <div className="skill-icons">
+                <SkillIcon name="Visual Studio Code" src="https://img.icons8.com/?size=48&id=9OGIyU8hrxW5&format=png" />
+                <SkillIcon name="Eclipse" src="https://img.icons8.com/?size=80&id=rPAHs7H1vriV&format=png" />
+                <SkillIcon name="Android Studio" src="https://img.icons8.com/?size=48&id=04OFrkjznvcd&format=png" />
+                <SkillIcon name="IntelliJ IDEA" src="https://img.icons8.com/?size=48&id=61466&format=png" />
+                <SkillIcon name="Git" src="https://img.icons8.com/?size=48&id=20906&format=png" />
+                <SkillIcon name="GitLab" src="https://img.icons8.com/?size=48&id=34886&format=png" />
+                <SkillIcon name="Shell" src="https://img.icons8.com/?size=48&id=19292&format=png" />
+                <SkillIcon name="Unity" src="https://img.icons8.com/?size=48&id=P08kExl7rixR&format=png" />
+                <SkillIcon name="Blender" src="https://img.icons8.com/?size=48&id=kQgv4iWrBzpN&format=png" />
+                <SkillIcon name="Docker" src="https://img.icons8.com/?size=48&id=22813&format=png" />
               </div>
             </div>
           </div>

@@ -14,6 +14,7 @@ const DreamsDonutsPage = React.lazy(() => import('./pages/DreamsDonutsPage'));
 const JavaProjectPage = React.lazy(() => import('./pages/JavaProjectPage'));
 const PythonGamePage = React.lazy(() => import('./pages/PythonGamePage'));
 const Error404 = React.lazy(() => import('./pages/Error404'));
+const LaPosteProjectPage = React.lazy(() => import('./pages/LaPosteProjectPage'));
 
 const Sitemap = () => {
   useEffect(() => {
@@ -29,6 +30,11 @@ const Sitemap = () => {
   <!-- Projects -->
   <url>
     <loc>https://jimmy-legg.live/dreams-donuts</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jimmy-legg.live/la-poste-rag</loc>
     <priority>0.8</priority>
   </url>
 
@@ -130,6 +136,7 @@ function App() {
             <Route path="/dreams-donuts" element={<DreamsDonutsPage />} />
             <Route path="/java-project" element={<JavaProjectPage />} />
             <Route path="/python-game" element={<PythonGamePage />} />
+            <Route path="/la-poste-rag" element={<LaPosteProjectPage />} />
             <Route path="/sitemap.xml" element={<Sitemap />} />
             <Route path="*" element={<Error404 />} />
           </Routes>

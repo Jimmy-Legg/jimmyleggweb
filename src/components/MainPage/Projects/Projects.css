@@ -95,31 +95,6 @@
     width: calc(100% - 100px);
 }
 
-.card:nth-child(1)::before,
-.card:nth-child(1)::after {
-    background: linear-gradient(315deg, #ffbc00, #ff0058);
-}
-
-.card:nth-child(2)::before,
-.card:nth-child(2)::after {
-    background: linear-gradient(315deg, #03a9f4, #ff0058);
-}
-
-.card:nth-child(3)::before,
-.card:nth-child(3)::after {
-    background: linear-gradient(315deg, #3cc900, #00acd3);
-}
-
-.card:nth-child(4)::before,
-.card:nth-child(4)::after {
-    background: linear-gradient(315deg, #0370ff, #ff0000);
-}
-
-.card:nth-child(5)::before,
-.card:nth-child(5)::after {
-    background: linear-gradient(315deg, #0370ff, #ff0000);
-}
-
 .card span {
     display: block;
     position: absolute;

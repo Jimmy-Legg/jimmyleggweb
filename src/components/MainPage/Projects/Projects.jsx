@@ -51,9 +51,11 @@ const Projects = () => {
     },
     {
       title: "Current Project: La Poste RAG",
+      subtitle: "school project",
       description: "Developing a Retrieval-Augmented Generation (RAG) system for La Poste. This cutting-edge project combines advanced natural language processing techniques to enhance information retrieval and generation capabilities for France's postal service.",
+      link: "/la-poste-rag",
       className: "g",
-      buttonText: "Coming Soon"
+      buttonText: "Learn More"
     }
   ]
 

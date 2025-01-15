@@ -45,39 +45,83 @@
   width: calc(100% - 100px);
 }
 
+/*
+lets add a color by language of programming
+- HTML : #F27438
+- JS : #DAAB3A
+- JAVA : #0072C6
+- C++ : #5C6BC0
+- C : #228B22
+- C# : #8F7C8F
+- Python : #3b58ff
+- SQL : #00758F
+*/
+
+/*Language : python html */
 .card:nth-child(1)::before,
 .card:nth-child(1)::after {
-  background: linear-gradient(315deg, #ffbc00, #ff0058);
+  background: linear-gradient(315deg, #ffe600, #0b2ef4);
 }
 
+/*Language : python html */ 
 .card:nth-child(2)::before,
 .card:nth-child(2)::after {
-  background: linear-gradient(315deg, #03a9f4, #ff0058);
+  background: linear-gradient(315deg, #ff0058, #f05454);
 }
 
+/*Language : html sql*/
 .card:nth-child(3)::before,
 .card:nth-child(3)::after {
-  background: linear-gradient(315deg, #3cc900, #00acd3);
+  background: linear-gradient(315deg, #ff0000, #ffffff);
 }
 
+/*Language : java */
 .card:nth-child(4)::before,
 .card:nth-child(4)::after {
-  background: linear-gradient(315deg, #0370ff, #ff0000);
+  background: linear-gradient(315deg, #8edd3e, #ff6600);
 }
 
+/*Language : python  */
 .card:nth-child(5)::before,
 .card:nth-child(5)::after {
-  background: linear-gradient(315deg, #ff03c0, #008cff);
+  background: linear-gradient(315deg, #64fb56, #9a9a00);
 }
 
+/*Language : python */
 .card:nth-child(6)::before,
 .card:nth-child(6)::after {
-  background: linear-gradient(315deg, #fbff03, #0400ff);
+  background: linear-gradient(315deg, #64fb56, #9a9a00);
 }
 
+/*Language : no language CV */
 .card:nth-child(7)::before,
 .card:nth-child(7)::after {
-  background: linear-gradient(315deg, #0370ff, #ff0000);
+  background: linear-gradient(315deg, #57f36f, #0370ff);
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.github-link {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #333;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  background: #24292e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .content {
